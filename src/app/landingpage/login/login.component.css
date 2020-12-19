@@ -1,0 +1,10 @@
+.dropdown{
+    width: 48px;
+    height: 32px
+}
+input:hover{
+    border: 1px solid #28a745;
+}
+.error{
+    color:red;
+}

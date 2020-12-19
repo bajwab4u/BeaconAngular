@@ -1,0 +1,13 @@
+.dropdown{
+    width: 48px;
+    height: 32px
+}
+.error{
+    color:red;
+}
+input:hover{
+    border: 1px solid #17a2b8;
+  }
+.radio{
+    color:#7a7c80
+}   

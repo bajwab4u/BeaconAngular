@@ -1,0 +1,9 @@
+.container{
+    overflow: hidden;
+}
+
+.img{
+    width:540px;
+    height:295px;
+    max-width: 100%; 
+};

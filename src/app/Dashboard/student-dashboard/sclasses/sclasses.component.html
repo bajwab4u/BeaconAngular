@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        
+            <form class="mt-4 text-center " #myForm="ngForm" >
+                <div class="form-group justify-content-center">
+                    <input type="code" class="code form-control w-auto d-inline-block" required name="code" id="code"  placeholder="Enter Valid Code" ngModel>
+                    <button type="submit" class="form-control w-auto ml-2 btn btn-success d-inline-block" >Join Class</button>
+                </div>
+              </form>
+              <ng-container ><small class="error"></small></ng-container>
+              
+    </div>
+    <hr class="w-75">
+    <div class="row text-center">
+        <div class="col">
+            <h3>All Classes</h3>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col">
+            <p>No Class Available</p>
+        </div>
+    </div>
+
+</div>

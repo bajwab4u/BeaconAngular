@@ -1,0 +1,34 @@
+@font-face{
+    font-family:"PoiretOne";
+    src:local("PoiretOne"),url(/assets/fonts/PoiretOne-Regular.ttf) format("truetype");}
+
+.logo{
+    height:100px
+    
+}
+.title{
+    font-family:"PoiretOne";
+    margin-top:15px;
+    letter-spacing: 0.15em;
+}
+
+.btn{
+    border-radius: 36px;
+    font-family: 'Quicksand', sans-serif;
+    width: 180px;
+    transition: all 0.2s ease-in-out;
+    
+}
+.btn:hover {
+    transform: translateY(+0.2rem);
+}
+
+
+
+
+
+
+
+
+
+

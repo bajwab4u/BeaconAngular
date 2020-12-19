@@ -1,0 +1,23 @@
+<div>
+    <div class="text-center pt-3">
+      <img  [@rubberBand]="rubberBand" class="dropdown " src="../../../assets/dropdown.png" alt="">
+    </div>
+    <div class="bg-white shadow rounded mt-2">
+      <div class="text-center pt-3">
+        <h4>SIGN IN </h4>
+       </div>
+    <form class="p-5" (ngSubmit)="onSubmit(myForm)" #myForm="ngForm" >
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" required name="email" id="email"  placeholder="Enter email" ngModel>
+            <ng-container ><small class="error">{{errorObj.email}}</small></ng-container>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" name="password" id="password" placeholder="Enter Password" ngModel>
+            <ng-container ><small class="error">{{errorObj.password}}</small></ng-container>
+        </div>
+          <button type="submit" class="btn btn-success form-control mt-2">Submit</button>
+      </form>
+    </div>
+</div>
