@@ -19,4 +19,10 @@ export class ClassService {
   let url="http://localhost:3000/teacher/class";
   return this.http.post(url,body,httpOptions);
   }
+
+  joinClass(info){
+    let body=JSON.stringify(info);
+  let url="http://localhost:3000/student/class";
+  return this.http.put(url,body,httpOptions);
+  }
 }

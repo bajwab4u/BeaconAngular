@@ -26,16 +26,14 @@
           </div>
           <div class="form-group">
             <label for="password">Joining Code</label>
-            <input type="password" pattern=".{6,}" class=" form-control" id="id" name="id" placeholder="Enter Code ( Minimum Length 6 characters )" ngModel >
+            <input type="text" pattern=".{6,}" class=" form-control" id="id" name="id" placeholder="Enter Code ( Minimum Length 6 characters )" ngModel >
             <ng-container ><small class="error">{{errorObj.id}}</small></ng-container>
           </div>
           <div class="text-center">
             <button type="submit" class="btn btn-outline-info mr-3">Submit</button>
           <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
           </div>
-          
         </form>
-
       </div>
     </div>
   </div>
