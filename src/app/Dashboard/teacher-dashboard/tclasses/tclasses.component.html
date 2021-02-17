@@ -42,3 +42,17 @@
 
     </div>
 </div>
+
+
+<div class="card"  style="width: 18rem;" *ngFor="let item of mydata">
+  <div class="card-body">
+    <h5 class="card-title">Name : {{item.name}}</h5>
+    <p class="card-text">Description : {{item.description}}</p>
+    <p class="card-text">Join Code : {{item.id}}</p>
+    <p class="card-text" *ngFor = "let std of item.students" >Students : {{std.sid["name"]}}</p>
+
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+
