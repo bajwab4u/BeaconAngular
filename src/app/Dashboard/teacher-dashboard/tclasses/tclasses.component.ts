@@ -1,4 +1,4 @@
-import { Component, OnInit , DoCheck } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ClassService } from '../../../Services/class.service';
 import {Router} from '@angular/router';
@@ -11,7 +11,7 @@ import { ProfileService } from './../../../Services/profile.service';
   templateUrl: './tclasses.component.html',
   styleUrls: ['./tclasses.component.css']
 })
-export class TClassesComponent implements OnInit , DoCheck {
+export class TClassesComponent implements OnInit {
 
   constructor(private _service:ClassService,private toastr: ToastrService,private router:Router,private pageTitle:Title,private profileService:ProfileService) { }
   errorObj:any={
@@ -19,31 +19,33 @@ export class TClassesComponent implements OnInit , DoCheck {
     description:'',
     id:''
   };
-  email;
-  mydata:any ={
+    email;
+    mydata:any ={
     name:'',
-    teacher:''
+    teacher:'',
+    students:[]
   };
+  
+
   ngOnInit(): void {
     this.pageTitle.setTitle('Create Class');
     
     this.profileService.getusername().subscribe(data=>{
       this.email = data["email"];
+      this._service.teacherClasses(this.email).subscribe(data=>{
+        this.mydata = data;
+        console.log(data);
+      })
       },
       err=>{
         this.router.navigate['login'];
       })
-    this._service.teacherClasses("teacher@teacher.com").subscribe(data=>{
-      this.mydata = data;
-      console.log(data);
-    }
-    )
+    
       
   };
   
-  ngDoCheck(): void {
-    console.log("Do Check called")
-  }
+  
+  
   
   onSubmit(form:NgForm){
     form.value["email"]=this.email;
@@ -51,6 +53,10 @@ export class TClassesComponent implements OnInit , DoCheck {
       data => {console.log(data);
         this.toastr.success('Class Successfully Created',);
         console.log(form.value);
+        this._service.teacherClasses(this.email).subscribe(data=>{
+          this.mydata = data;
+          console.log(data);
+        })
       },
       err => {
         this.errorObj = err.error;

@@ -3,6 +3,7 @@ import { AuthGuard } from './auth.guard';
 import { BrowserModule } from '@angular/platform-browser';
 import { ToastrModule } from 'ngx-toastr';
 import { NgModule } from '@angular/core';
+import { ClipboardModule } from 'ngx-clipboard';
 import { AuthService } from './auth.service';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -68,7 +69,8 @@ import { TProfileComponent } from './Dashboard/teacher-dashboard/tprofile/tprofi
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    ClipboardModule
  
   ],
   providers: [AuthService,CookieService ,AuthGuard ,ProfileService],

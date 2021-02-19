@@ -39,20 +39,32 @@
   </div>
 </div>
         </div>
-
     </div>
 </div>
 
-
-<div class="card"  style="width: 18rem;" *ngFor="let item of mydata">
-  <div class="card-body">
-    <h5 class="card-title">Name : {{item.name}}</h5>
-    <p class="card-text">Description : {{item.description}}</p>
-    <p class="card-text">Join Code : {{item.id}}</p>
-    <p class="card-text" *ngFor = "let std of item.students" >Students : {{std.sid["name"]}}</p>
-
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="container">
+  <div class="row">
+      <div class="col-sm-5 card shadow mr-3 ml-5 mt-3 mb-3"  style="width: 18rem;" *ngFor="let item of mydata">
+        <div class="card-body p-5 text-center">
+          <h2 class="card-text list-group-item">{{item.name}}</h2>
+            <p class="card-text mt-4 mb-2"><b>Joining Code</b><legend  class="" style="color:rgb(44, 156, 44)"><p #inputTarget>{{item.id}}</p></legend></p>
+            <button  class="bg-transparent border-0" ngxClipboard *ngxClipboardIfSupported [cbContent]="inputTarget.innerHTML" ><span style="color:rgb(99, 99, 212)" class="fa fa-copy"></span></button>
+          
+          <hr>
+          <ng-container *ngIf="item.students!=''; else elseTemplate">
+            <div class="card-text mb-4" *ngFor = "let std of item.students,let itemcount = count" ><b>Students</b><div><b class="mr-3" style="color:green">{{itemcount}}</b><i class="btn badge badge-secondary badge-pill">View</i></div></div>
+          </ng-container>
+          <ng-template #elseTemplate>
+            <div class="card-text mb-5"><p style="color:rgb(211, 119, 119)">No! Students Available</p> </div>
+          </ng-template>
+    
+          <hr>
+          <a href="#" class="btn btn-outline-success form-control rounded-pill">Start Meeting</a>
+        </div>
+      </div>
+    
   </div>
 </div>
+
 
 
