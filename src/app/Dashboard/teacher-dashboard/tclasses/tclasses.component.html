@@ -52,8 +52,25 @@
           
           <hr>
           <ng-container *ngIf="item.students!=''; else elseTemplate">
-            <div class="card-text mb-4" *ngFor = "let std of item.students,let itemcount = count" ><b>Students</b><div><b class="mr-3" style="color:green">{{itemcount}}</b><i class="btn badge badge-secondary badge-pill">View</i></div></div>
+            <div class="card-text mb-3"><b>Students</b><div><b class="mr-3 " style="color:green">{{item.students.length}}</b></div></div>
+            <i class="btn badge badge-secondary badge-pill" data-toggle="modal" [attr.data-target]="'#'+item.id" data-whatever="@mdo">View</i>
+            <div class="modal text-left fade" [id]="item.id" tabindex="-1" role="dialog" aria-labelledby="studentModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="studentModalLabel">Students</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p *ngFor = "let std of item.students , let i = index" ><b>{{i+1}}.</b>&nbsp;<b style="color: rgb(68, 68, 112);">{{std.sid.name}}</b></p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </ng-container>
+          
           <ng-template #elseTemplate>
             <div class="card-text mb-5"><p style="color:rgb(211, 119, 119)">No! Students Available</p> </div>
           </ng-template>
@@ -61,6 +78,7 @@
           <hr>
           <a href="#" class="btn btn-outline-success form-control rounded-pill">Start Meeting</a>
         </div>
+        
       </div>
     
   </div>
