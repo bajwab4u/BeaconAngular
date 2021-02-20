@@ -31,4 +31,9 @@ export class ClassService {
     return this.http.get(url,httpOptions);
   }
 
+  studentClasses(info){
+    let url="http://localhost:3000/student/class/"+info;
+    return this.http.get(url,httpOptions);
+  }
+
 }

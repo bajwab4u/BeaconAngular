@@ -24,7 +24,7 @@ export class TClassesComponent implements OnInit {
     name:'',
     teacher:'',
     students:[]
-  };
+     };
   
 
   ngOnInit(): void {

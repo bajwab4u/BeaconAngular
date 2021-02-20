@@ -20,16 +20,28 @@ export class SClassesComponent implements OnInit {
     id:''
   };
   email;
-  ngOnInit(): void {
-    this.pageTitle.setTitle('Create Class');
+  mydata:any ={
+  name:'',
+  teacher:'',
+  students:[]
+   };
+   ngOnInit(): void {
+    this.pageTitle.setTitle('Join Class');
     
     this.profileService.getusername().subscribe(data=>{
       this.email = data["email"];
+      this._service.studentClasses(this.email).subscribe(data=>{
+        this.mydata = data;
+        console.log(data);
+      })
       },
       err=>{
         this.router.navigate['login'];
       })
-  }
+    
+      
+  };
+
   onSubmit(form:NgForm){
     console.log(form.value);
     form.value["email"]=this.email;
@@ -37,6 +49,10 @@ export class SClassesComponent implements OnInit {
       data => {console.log(data);
         this.toastr.success('Successfully ! Joined',);
         console.log(form.value);
+        this._service.studentClasses(this.email).subscribe(data=>{
+          this.mydata = data;
+          console.log(data);
+        })
       },
       err => {
         this.errorObj = err.error;
