@@ -1,10 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,Inject } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ClassService } from '../../../Services/class.service';
 import {Router} from '@angular/router';
 import { Title } from '@angular/platform-browser';
 import { ToastrService } from 'ngx-toastr';
 import { ProfileService } from './../../../Services/profile.service';
+
+
+
 
 @Component({
   selector: 'app-sclasses',
@@ -13,19 +16,26 @@ import { ProfileService } from './../../../Services/profile.service';
 })
 export class SClassesComponent implements OnInit {
 
-  constructor(private _service:ClassService,private toastr: ToastrService,private router:Router,private pageTitle:Title,private profileService:ProfileService) { }
+
+  
+
+constructor(private _service:ClassService,private toastr: ToastrService,private router:Router,private pageTitle:Title,private profileService:ProfileService) { }
+  
   errorObj:any={
     name:'',
     description:'',
     id:''
   };
+
   email;
+
   mydata:any ={
   name:'',
   teacher:'',
   students:[]
    };
-   ngOnInit(): void {
+
+  ngOnInit(): void {
     this.pageTitle.setTitle('Join Class');
     
     this.profileService.getusername().subscribe(data=>{
@@ -63,6 +73,5 @@ export class SClassesComponent implements OnInit {
     
     )
   };
-  
-
 }
+

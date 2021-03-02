@@ -19,25 +19,27 @@
     </div>
     
     <ng-container *ngIf="mydata != ''; else elseTemplate">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5 card shadow mr-3 ml-5 mt-3 mb-3"  style="width: 18rem;" *ngFor="let item of mydata">
-                  <div class="card-body p-5 text-center">
-                    <h2 class="card-text list-group-item">{{item.name}}</h2>
-                    <ng-container *ngIf="item.students!=''; else elseTemplate">
-                      <div class="card-text mb-4" *ngFor = "let std of item.students,let itemcount = count" ><b>Students</b><div><b class="mr-3" style="color:green">{{itemcount}}</b><i class="btn badge badge-secondary badge-pill">View</i></div></div>
-                    </ng-container>
-                    <ng-template #elseTemplate>
-                      <div class="card-text mb-5"><p style="color:rgb(211, 119, 119)">No! Students Available</p> </div>
-                    </ng-template>
-              
-                    <hr>
-                    <a href="#" class="btn btn-outline-success form-control rounded-pill">Join Meeting</a>
-                  </div>
-                </div>
+      <div class="container">
+        <div class="row">
+            <div class="col-sm-5 card shadow mr-3 ml-5 mt-3 mb-3"  style="width: 18rem;" *ngFor="let item of mydata">
+              <div class="card-body p-5 text-center">
+                <h2 class="card-text list-group-item">{{item.name}}</h2>  
+                <ng-container *ngIf="item.students!=''; else elseTemplate">
+                  <div class="card-text mb-3"><b>Students</b><div><b class="mr-3 " style="color:green">{{item.students.length}}</b></div></div>
+                </ng-container>
+                
+                <ng-template #elseTemplate>
+                  <div class="card-text mb-5"><p style="color:rgb(211, 119, 119)">No! Students Available</p> </div>
+                </ng-template>
+          
+                <hr>
+                <a href="#" class="btn btn-outline-success form-control rounded-pill">Join Meeting</a>
+              </div>
               
             </div>
-          </div>
+          
+        </div>
+      </div>
     </ng-container>
     <ng-template #elseTemplate>
         <div class="row text-center">
@@ -49,3 +51,8 @@
     
 
 </div>
+
+<hr>
+
+
+
