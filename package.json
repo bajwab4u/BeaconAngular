@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "~10.0.2",
     "@angular/router": "~10.0.2",
     "@ng-bootstrap/ng-bootstrap": "^8.0.0",
+    "@zoomus/websdk": "^1.9.0",
     "angular-particle": "^1.0.4",
     "bootstrap": "^4.5.0",
     "bootstrap-icons": "^1.2.1",

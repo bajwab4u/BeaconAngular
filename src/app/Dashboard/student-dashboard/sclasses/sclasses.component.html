@@ -19,6 +19,17 @@
     </div>
     
     <ng-container *ngIf="mydata != ''; else elseTemplate">
+    
+      <div class="mt-4 row justify-content-center">
+        
+        <input class="code form-control w-auto d-inline-block"  type="text" [(ngModel)]="meetingNumber" placeholder="Enter Meeting Number">
+      <input  class="code form-control w-auto d-inline-block ml-2" type="text" [(ngModel)]="passWord"  placeholder="Enter Password">
+  
+      <button class="form-control w-auto ml-2 btn btn-success d-inline-block"  (click)="getSignature()">Join Meeting</button>
+          
+      </div>
+      
+      <hr>
       <div class="container">
         <div class="row">
             <div class="col-sm-5 card shadow mr-3 ml-5 mt-3 mb-3"  style="width: 18rem;" *ngFor="let item of mydata">
@@ -32,8 +43,6 @@
                   <div class="card-text mb-5"><p style="color:rgb(211, 119, 119)">No! Students Available</p> </div>
                 </ng-template>
           
-                <hr>
-                <a href="#" class="btn btn-outline-success form-control rounded-pill">Join Meeting</a>
               </div>
               
             </div>
