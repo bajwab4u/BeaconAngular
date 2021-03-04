@@ -30,7 +30,7 @@ export class SClassesComponent implements OnInit {
 
   
 
-constructor(private _service:ClassService,private toastr: ToastrService,private router:Router,private pageTitle:Title,private profileService:ProfileService,public httpClient: HttpClient, @Inject(DOCUMENT) any) { }
+constructor(private _service:ClassService,private toastr: ToastrService,private router:Router,private pageTitle:Title,private profileService:ProfileService,public httpClient: HttpClient, @Inject(DOCUMENT) document) { }
   
   errorObj:any={
     name:'',
@@ -78,9 +78,7 @@ constructor(private _service:ClassService,private toastr: ToastrService,private 
     })
   }
   startMeeting(signature) {
-
     document.getElementById('zmmtg-root').style.display = 'block'
-
     ZoomMtg.init({
       leaveUrl: this.leaveUrl,
       isSupportAV: true,

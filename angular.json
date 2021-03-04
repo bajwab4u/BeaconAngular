@@ -5,7 +5,11 @@
   "projects": {
     "LandingPage": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,6 +17,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "@zoomus/websdk",
+              "tsparticles"
+           ],
             "outputPath": "dist/LandingPage",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -21,7 +29,12 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@zoomus/websdk/dist/lib/",
+                "output": "./node_modules/@zoomus/websdk/dist/lib/"
+              }
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -41,7 +54,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
@@ -49,13 +61,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ]
             }
@@ -81,29 +93,17 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "allowedCommonJsDependencies": [
-              "@zoomus/websdk"
-           ],
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets",
-              {
-                "glob": "**/*",
-                "input": "./node_modules/@zoomus/websdk/dist/lib/",
-                "output": "./node_modules/@zoomus/websdk/dist/lib/"
-              }
+              "src/assets"
             ],
-            
             "styles": [
-              "node_modules/@zoomus/websdk/dist/css/bootstrap.css",
-              "node_modules/@zoomus/websdk/dist/css/react-select.css",
               "src/styles.css"
             ],
-            
             "scripts": []
           }
         },
