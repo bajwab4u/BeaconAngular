@@ -24,7 +24,7 @@ export class SClassesComponent implements OnInit {
   meetingNumber = ''
   role = 0
   leaveUrl = 'http://localhost:4200/studentDashboard/class'
-  userName = 'Angular'
+  userName = ''
   userEmail = 'bajwab4u@gmail.com'
   passWord = ''
 
@@ -50,6 +50,8 @@ constructor(private _service:ClassService,private toastr: ToastrService,private 
     this.pageTitle.setTitle('Join Class');
     
     this.profileService.getusername().subscribe(data=>{
+      this.userName = data["name"];
+      this.userEmail = data["email"];
       this.email = data["email"];
       this._service.studentClasses(this.email).subscribe(data=>{
         this.mydata = data;

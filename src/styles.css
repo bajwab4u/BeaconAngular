@@ -1,8 +1,7 @@
-
-html, body {
+body {
     min-width: 0 !important;
     background: #fafafa;
-    
+    height: 100;
   }
 #zmmtg-root {
   display: none;
