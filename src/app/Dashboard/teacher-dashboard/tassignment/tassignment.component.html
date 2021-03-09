@@ -1,1 +1,114 @@
-<p>tassignment works!</p>
+<div class="conatiner text-right">
+    <div class="row">
+        <div class="col mt-3">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo"> + Create Assignment</button>
+<!-- 
+<div class="modal text-left fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Enter Class Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="p-5" (ngSubmit)="onSubmit(myForm)" #myForm="ngForm"  >
+          <div class="form-group">
+              <label for="name">Class Name</label>
+              <input type="text" class="form-control"  id="name" name="name" placeholder="Enter Class Name" ngModel >
+              <ng-container ><small class="error">{{errorObj.name}}</small></ng-container>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Enter Description </label>
+            <input type="text" class="form-control" id="description"  name="description" placeholder="Enter Class Description" ngModel >
+            <ng-container ><small class="error">{{errorObj.description}}</small></ng-container>
+          </div>
+          <div class="form-group">
+            <label for="password">Joining Code</label>
+            <input type="text" pattern=".{6,}" class=" form-control" id="id" name="id" placeholder="Enter Code ( Minimum Length 6 characters )" ngModel >
+            <ng-container ><small class="error">{{errorObj.id}}</small></ng-container>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-outline-info mr-3">Submit</button>
+          <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+    </div>
+</div>
+<div class="row text-center">
+  <div class="col">
+      <h3>All Classes</h3>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <hr>
+      <ng-container *ngIf="mydata != ''; else elseTemplate">
+        <div class="mt-4 row justify-content-center">
+        <button class="btn btn-info">+ Create Meeting</button> 
+        </div>
+        <hr>
+        <div class="container">
+          <div class=row>
+            
+        <div class="col-sm-5 card shadow mr-3 ml-5 mt-3 mb-3"  style="width: 18rem;" *ngFor="let item of mydata">
+          <div class="card-body p-5 text-center">
+            <h2 class="card-text list-group-item">{{item.name}}</h2>
+              <p class="card-text mt-4 mb-2"><b>Joining Code</b><legend  class="" style="color:rgb(44, 156, 44)"><p #inputTarget>{{item.id}}</p></legend></p>
+              <button  class="bg-transparent border-0" ngxClipboard *ngxClipboardIfSupported [cbContent]="inputTarget.innerHTML" ><span style="color:rgb(99, 99, 212)" class="fa fa-copy"></span></button>
+            
+            <hr>
+            <ng-container *ngIf="item.students!=''; else elseTemplate">
+              <div class="card-text mb-3"><b>Students</b><div><b class="mr-3 " style="color:green">{{item.students.length}}</b></div></div>
+              <i class="btn badge badge-secondary badge-pill" data-toggle="modal" [attr.data-target]="'#'+item.id" data-whatever="@mdo">View</i>
+              <div class="modal text-left fade" [id]="item.id" tabindex="-1" role="dialog" aria-labelledby="studentModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="studentModalLabel">Students</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p *ngFor = "let std of item.students , let i = index" ><b>{{i+1}}.</b>&nbsp;<b style="color: rgb(68, 68, 112);">{{std.sid.name}}</b></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+            
+            <ng-template #elseTemplate>
+              <div class="card-text mb-5"><p style="color:rgb(211, 119, 119)">No! Students Available</p> </div>
+            </ng-template>
+      
+            <hr>
+            <a href="#" class="btn btn-outline-success form-control rounded-pill">Start Meeting</a>
+          </div>
+          
+        </div>
+          </div>
+        </div>
+      </ng-container>
+      <ng-template #elseTemplate>
+        <div class="container-fluid mt-4">
+          <div class="row text-center">
+            <div class="col">
+                <p style="color:rgb(211, 119, 119)">No Class Available</p>
+            </div>
+        </div>
+        </div>
+    </ng-template>
+    
+  </div> -->
+</div>
+
+
+
+
